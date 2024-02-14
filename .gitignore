@@ -2,3 +2,4 @@ HALLTICKETS/*
 %cypress/*
 %cypress-dhiu-hallticket-batch-downloader/*
 node_modules
+cypress/e2e/1/credentials.js
