@@ -2,7 +2,7 @@
 // const cypress = require('cypress')
 const credentials = require('./credentials')
 
-const CLASS_TO_LOOP = "10"
+const CLASS_TO_LOOP = "7"
 let stds = [
     ["8129453800", "510"],
   ];
@@ -17,7 +17,7 @@ let stds = [
         cy.get("#Password").type(candidate["password"]);
         cy.get("[type=submit]").click();
         cy.visit("https://portal.dhiu.in/Parent/ParentsDetails/HallTicket")
-        cy.get("option").contains("Half Yearly Examination").invoke("attr","value").then(e=>{
+        cy.get("option").contains("Annual Examination").invoke("attr","value").then(e=>{
         console.log(e);
           cy.request({
             method: "POST",
@@ -26,7 +26,7 @@ let stds = [
             body: { ExamsofClassId: e },
             encoding: "binary",
           }).then((r) => {
-            cy.writeFile(`./files/${CLASS_TO_LOOP}/${candidate.username}.pdf`, r.body, "binary");
+            cy.writeFile(`./HALLTICKETS/${CLASS_TO_LOOP}/${candidate.username}.pdf`, r.body, "binary");
           });
         })
         
