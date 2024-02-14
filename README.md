@@ -1,7 +1,7 @@
-## Edit credentials
+- Edit credentials
 
-## For hallticket downloading:
+- For hallticket downloading:
 select e2e > download_halltickets.cy.js
 
-## run the command:
+- run the command:
 npx cypress open
